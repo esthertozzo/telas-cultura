@@ -1,0 +1,7 @@
+{
+  "name": "telas-cultura",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
