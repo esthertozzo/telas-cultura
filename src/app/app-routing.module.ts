@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'telas-cultura/:t1/:t2/:t3/:t4/:m/:c/:mF',
+    loadChildren: () => import('./telas-cultura/telas-cultura.module').then( m => m.TelasCulturaPageModule)
+  },
 ];
 
 @NgModule({

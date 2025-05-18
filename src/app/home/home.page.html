@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Culturas Ideais para Plantio
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,62 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Culturas Ideais para Plantio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item>
+    <ion-label>Selecione a temperatura do 1º mês</ion-label>
+    <ion-range min="-50" max="50" step="1" [(ngModel)]="temp1" pin="true" snaps="true">
+      <ion-label slot="start">-50°C</ion-label>
+      <ion-label slot="end">50°C</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Selecione a temperatura do 2º mês</ion-label>
+    <ion-range min="-50" max="50" step="1" [(ngModel)]="temp2" pin="true" snaps="true">
+      <ion-label slot="start">-50°C</ion-label>
+      <ion-label slot="end">50°C</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Selecione a temperatura do 3º mês</ion-label>
+    <ion-range min="-50" max="50" step="1" [(ngModel)]="temp3" pin="true" snaps="true">
+      <ion-label slot="start">-50°C</ion-label>
+      <ion-label slot="end">50°C</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Selecione a temperatura do 4º mês</ion-label>
+    <ion-range min="-50" max="50" step="1" [(ngModel)]="temp4" pin="true" snaps="true">
+      <ion-label slot="start">-50°C</ion-label>
+      <ion-label slot="end">50°C</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>  <ion-button color="warning" (click)="calcular()">Calcular culturas ideais</ion-button>
+</ion-item>
+
+
+<ion-content >
+  <ion-item>
+  <ion-grid id="table">
+    <ion-row id="title__table">
+      <ion-col>Cultura</ion-col>
+      <ion-col>Temp. Mínima</ion-col>
+      <ion-col>Temp. Maxima</ion-col>
+    </ion-row>
+    <div *ngFor="let cultura of culturas">
+      <ion-row id="item__table">
+        <ion-col>{{ cultura.nome }}</ion-col>
+        <ion-col>{{ cultura.min }}°C</ion-col>
+        <ion-col>{{ cultura.max }}°C</ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+  </ion-item>
+</ion-content>
 </ion-content>
